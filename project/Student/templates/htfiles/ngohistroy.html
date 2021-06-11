@@ -1,0 +1,39 @@
+{% extends 'htfiles/header.html' %}
+{% block title %}org history{% endblock %}
+{% block content %}
+<div class="card col-md-10 mt-2 mx-auto">
+			<table>
+                {% csrf_token %}
+               <button class="btn btn-secondary" name="donorkaemail" value={{variable1}}>Medicine History</button>
+                </form>
+             </th>   
+			</table>
+			<table class="table table-striped">
+
+				<tr>
+					<th>S.No</th>
+					<th>Pharmacy name</th>
+					<th>Medicine name</th>
+					<th>Quantity</th>
+					<th>Category</th>
+					<th>Production date</th>
+					<th>Entry date</th>
+					<th>Expiry date</th>
+					<th>Reamining Days</th>
+					<th>Reamining Tablets</th>
+					<th>Accepted by</th>
+				</tr>
+				{% for i in info %}
+				<tr>
+					<td>{{forloop.counter}}</td>
+					<td>{{i.1}}</td>
+					<td>{{i.2}}</td>
+					<td>{{i.3}}</td>
+					<td>{{i.4}}</td>
+					<td>{{i.5}}</td>
+					<td>{{i.6}}</td>
+					<td>{{i.7}}</td>
+					<td>{{i.8| cut:", 0:00:00"}}</td>
+					<td>{{i.10}}</td>
+
+{% endblock %}
